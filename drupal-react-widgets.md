@@ -47,6 +47,8 @@ Contact for more info
 
 # Let's get started
 
+^ Why are we dealing with this? What's the issue?
+
 ---
 
 # Drupal's Admin Experience
@@ -129,13 +131,15 @@ Should it be done? YES! [Admin UI & JavaScript Modernisation](https://www.drupal
 
 ---
 
-# Drupal's Archetecture
+# Drupal's Underlying Archetecture
 
 [node edit form...]
 
+^ We can also easily edit one piece of a node in code without having to load the entire Node Edit form.
+
 ---
 
-# Drupal's Archetecture
+# Drupal's Underlying Archetecture
 
 - Entities
 - Fields
@@ -161,7 +165,7 @@ Should it be done? YES! [Admin UI & JavaScript Modernisation](https://www.drupal
 
 # Field Widgets
 
-Drupal inherently doesn't care about HOW the data gets in, it just needs the data... using a _widget_.
+On the node edit form, Drupal inherently doesn't care about HOW the data gets in, it just needs the data... using a _widget_.
 
 This opens up a world of possibilities to us.
 
@@ -175,5 +179,117 @@ This opens up a world of possibilities to us.
 1. Single Field React Widget
 1. Complex Data React Widget
 
+^ NOTE: I won't go into depth with the React side of code. I'm not a react expert by any means.. except to show you what we absolutely need for Drupal to work.
+
+^ NOTE: we are going to bounce around windows, so prepare yourself.
+
+^ Our first attempt, was just to prove if we can get react in one of these form elements. So we chose a slider to pick a number for a number field.
+
 ---
 
+# Single Field Widget
+## Example __=>__
+
+![ right 30%](media/simple-slider.png)
+
+^ Show example
+
+^ https://thf.local/node/1120/edit
+
+---
+
+# Single Field Widget
+
+[switch to code]
+
+^ Show the widget code: copy from the number Field Widget.
+^ formElement -> '#theme' => 'input__number__react'
+^ attaching the library
+
+^ Show the .module file:
+
+^ Show the template file:
+
+^ Show the libraries file:
+
+^ Show basic react files: index.js...
+^ Started with `create react app`
+
+^ this worked for us, but we had higher ambitions...
+
+___
+
+# Complex Data Widget
+
+![](media/complex-data.png)
+
+^ But what if we have more complex data? How many of you have built paragraphs nested inside of paragraphs, nested inside of paragrpahs... etc. etc.?
+
+^ This is the next challenge we wanted to face:
+
+___
+
+# Complex Data Widget
+
+![](media/complex-data.png)
+
+^ We had data chained together. Artifact and concepts. A - C - A - C - A
+
+^ Also we have a pretty large data set. How can we help the authors?
+
+___
+
+# Complex Data Widget
+
+[Show Hero Network node form]
+
+^ Here you can see the form in action.
+
+^ This is a good example, it is not too complex we get lost, but its not straight forward to do in Drupal.
+
+^ we had to thing through how do we have multiple "fields in Drupal" interact with one react App?
+
+---
+
+# Complex Data Widget
+
+React State and hook_node_presave()!
+
+^ We can save the state in a JSON object in a field and then on hook_node_presave()
+
+---
+
+# Complex Data Widget
+## Notes
+
+- hook_preprocess_node() to render data (optional)
+- For this specific example we used an API endpoint for data.
+
+---
+
+# Where to go from here?
+
+- Better Entity Browser (Media)
+- Better Paragraphs interface
+- "Hot spot" picker
+- Anything customized to your project or client
+- Sky is the limit!
+
+---
+
+#Thanks!
+
+###Questions?<br><br>Comments?<br><br>Discussion?
+
+---
+
+#Bluecadet
+
+![right](media/bc_workspace.jpg)
+![left](media/bluecadet-nasm-website.jpg)
+
+---
+
+https://github.com/pingevt/drupal-react-widgets
+
+---
