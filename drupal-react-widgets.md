@@ -2,6 +2,7 @@ autoscale: true
 build-lists: true
 slidenumbers: true
 footer: Pete Inge | Bluecadet | Injecting React into Your Authoring Experience
+theme: Work, 7
 
 # Injecting React into Your Authoring Experience
 
@@ -35,7 +36,7 @@ Contact for more info
 
 ^ Bluecadet is an experience design agency. We partner with mission-driven organizations to create a broad suite of products and environments. We embrace design, technology, and innovation in the service of content, emotion, and experience. We create experiences that engage audiences through increased knowledge, empathy, and action.
 
-^ We don't consider ourselves a Drupal shop. We do want to use the right tool for the right job. That said, we do use Drupal, and the "other" CMS for most of our BE needs. We are slated this year to really epxplore other CMSs, but my gut is telling our websites will stay inthe Drupal sphere for quite awhile.
+^ We do not consider ourselves a Drupal shop. We do want to use the right tool for the right job. That said, we do use Drupal, and the "other" CMS for most of our BE needs. We are slated this year to really epxplore other CMSs, but my gut is telling our websites will stay inthe Drupal sphere for quite awhile.
 
 ---
 
@@ -80,7 +81,7 @@ Is... __NOT__ good
 - The underlying archetecture is bad? (Think Forms??)
 
 ---
-
+[.build-lists: false]
 # Drupal's Admin Experience
 ## Is __NOT__ good
 
@@ -97,10 +98,6 @@ Is... __NOT__ good
 
 A good admin experience has to be _designed_, _opinionated_ and _purposeful_. This is hard to do in a system that tries to be eveything for everyone. __Especially when you get into complex data structures!__
 
-^ Overall Drupal is making great strides... However, our projects are now. And as developers we need to push the boundaries.
-
-^ What steps can we take now?? Lets take a deeper look at what we have available in Drupal...
-
 ---
 
 # Drupal's Admin Experience
@@ -109,10 +106,6 @@ A good admin experience has to be _designed_, _opinionated_ and _purposeful_. Th
 A good admin experience has to be _designed_, _opinionated_ and _purposeful_. This is hard to do in a system that tries to be eveything for everyone. __Especially when you get into complex data structures!__
 
 Can it be done? YES!
-
-^ Overall Drupal is making great strides... However, our projects are now. And as developers we need to push the boundaries.
-
-^ What steps can we take now?? Lets take a deeper look at what we have available in Drupal...
 
 ---
 
@@ -129,13 +122,7 @@ Should it be done? YES! [Admin UI & JavaScript Modernisation](https://www.drupal
 
 ^ What steps can we take now?? Lets take a deeper look at what we have available in Drupal...
 
----
-
-# Drupal's Underlying Archetecture
-
-[node edit form...]
-
-^ We can also easily edit one piece of a node in code without having to load the entire Node Edit form.
+^ Lets first tke a look at a bit of Drupal's archetecture.
 
 ---
 
@@ -159,13 +146,13 @@ Should it be done? YES! [Admin UI & JavaScript Modernisation](https://www.drupal
 
 ![right 50% original](media/form-display.png)
 
-^ Hopefully you are all familiar with the image here: The Form Display Page. Different ways to enter data... Select List of checkboxes/radios?
+^ Hopefully you are all familiar with the image here: The Form Display Page. Different ways to enter data... _Select List_ VS _checkboxes/radios_?
 
 ---
 
 # Field Widgets
 
-On the node edit form, Drupal inherently doesn't care about HOW the data gets in, it just needs the data... using a _widget_.
+On the node edit form, Drupal inherently does not care about HOW the data gets in, it just needs the data... using a _widget_.
 
 This opens up a world of possibilities to us.
 
@@ -179,7 +166,7 @@ This opens up a world of possibilities to us.
 1. Single Field React Widget
 1. Complex Data React Widget
 
-^ NOTE: I won't go into depth with the React side of code. I'm not a react expert by any means.. except to show you what we absolutely need for Drupal to work.
+^ NOTE: I will not go into depth with the React side of code. I'm not a react expert by any means.. except to show you what we absolutely need for Drupal to work.
 
 ^ NOTE: we are going to bounce around windows, so prepare yourself.
 
@@ -227,6 +214,8 @@ ___
 
 ^ This is the next challenge we wanted to face:
 
+^https://thf.local/node/add/test_react
+
 ___
 
 # Complex Data Widget
@@ -236,6 +225,8 @@ ___
 ^ We had data chained together. Artifact and concepts. A - C - A - C - A
 
 ^ Also we have a pretty large data set. How can we help the authors?
+
+^ https://thf.local/node/add/test_react
 
 ___
 
@@ -253,9 +244,9 @@ ___
 
 # Complex Data Widget
 
-React State and hook_node_presave()!
+React State and `hook_node_presave()`
 
-^ We can save the state in a JSON object in a field and then on hook_node_presave()
+^ We can save the state in a JSON object in a field and then on hook\_node\_presave()
 
 ---
 
@@ -274,6 +265,8 @@ React State and hook_node_presave()!
 - "Hot spot" picker
 - Anything customized to your project or client
 - Sky is the limit!
+
+^ We can also easily edit one piece of a node in code without having to load the entire Node Edit form.
 
 ---
 
