@@ -44,6 +44,8 @@ Contact for more info
 
 - Moderate to Advanced Coders
 
+^ => Let's dive in... First why?
+
 ---
 
 # Let's get started
@@ -89,7 +91,7 @@ Is... __NOT__ good
 - ~~The underlying archetecture is bad? (Think Forms??)~~
 
 
-# I would argure __NO__.!!
+# I would argure __NO__!!
 
 ---
 
@@ -122,7 +124,7 @@ Should it be done? YES! [Admin UI & JavaScript Modernisation](https://www.drupal
 
 ^ What steps can we take now?? Lets take a deeper look at what we have available in Drupal...
 
-^ Lets first tke a look at a bit of Drupal's archetecture.
+^ => Lets first tke a look at a bit of Drupal's archetecture.
 
 ---
 
@@ -138,11 +140,13 @@ Should it be done? YES! [Admin UI & JavaScript Modernisation](https://www.drupal
 
 ^ For today's talk we are specifically going to look at Field widgets.
 
+^ => Let's take a look.
+
 ---
 
 # Field Widgets
 
-"Field API widgets specify how fields are displayed in edit forms."
+"Field API widgets specify how fields are displayed in edit forms." - _drupal.org_
 
 ![right 50% original](media/form-display.png)
 
@@ -187,7 +191,7 @@ This opens up a world of possibilities to us.
 
 # Single Field Widget
 
-[switch to code]
+Let's switch to the code!
 
 ^ Show the widget code: copy from the number Field Widget.
 ^ formElement -> '#theme' => 'input__number__react'
@@ -202,6 +206,8 @@ This opens up a world of possibilities to us.
 ^ Show basic react files: index.js...
 ^ Started with `create react app`
 
+^ This specific example could be done in plain JS...
+
 ^ this worked for us, but we had higher ambitions...
 
 ___
@@ -214,7 +220,7 @@ ___
 
 ^ This is the next challenge we wanted to face:
 
-^https://thf.local/node/add/test_react
+^ https://thf.local/node/add/hero_network
 
 ___
 
@@ -222,17 +228,21 @@ ___
 
 ![](media/complex-data.png)
 
+[images of hero network...]
+
 ^ We had data chained together. Artifact and concepts. A - C - A - C - A
+
+^ Many to many relationships
 
 ^ Also we have a pretty large data set. How can we help the authors?
 
-^ https://thf.local/node/add/test_react
+^ https://thf.local/node/add/hero_network
 
 ___
 
 # Complex Data Widget
 
-[Show Hero Network node form]
+to the website!!
 
 ^ Here you can see the form in action.
 
@@ -240,20 +250,29 @@ ___
 
 ^ we had to thing through how do we have multiple "fields in Drupal" interact with one react App?
 
+^ => After a lot of thinking, two things popped out for us...
+
 ---
 
 # Complex Data Widget
 
-React State and `hook_node_presave()`
+- React State
+- `hook_node_presave()`
 
 ^ We can save the state in a JSON object in a field and then on hook\_node\_presave()
+
+^ First Step, I can save JSON object to text field, and use that for saving and editing.
+
+^ Second Step, If I need that data, I can then enter it into fields/paras etc on hook\_node\_presave()
+
+^ => Lets move on to some more notes about what we did...
 
 ---
 
 # Complex Data Widget
 ## Notes
 
-- hook_preprocess_node() to render data (optional)
+- `hook_preprocess_node()` to render data (optional)
 - For this specific example we used an API endpoint for data.
 
 ---
@@ -263,6 +282,7 @@ React State and `hook_node_presave()`
 - Better Entity Browser (Media)
 - Better Paragraphs interface
 - "Hot spot" picker
+- Recurring Dates
 - Anything customized to your project or client
 - Sky is the limit!
 
