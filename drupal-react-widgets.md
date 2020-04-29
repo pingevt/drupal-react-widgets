@@ -9,7 +9,7 @@ theme: Work, 7
 ^ * Be the Story Teller
 * Breathe
 
----
+___
 
 # Who am I?
 
@@ -27,7 +27,7 @@ Current: @ BC for 4.5 years
 I'm a problem solver
 Contact for more info
 
----
+___
 
 #Bluecadet
 ![fit](media/bc.jpg)
@@ -36,9 +36,9 @@ Contact for more info
 
 ^ Bluecadet is an experience design agency. We partner with mission-driven organizations to create a broad suite of products and environments. We embrace design, technology, and innovation in the service of content, emotion, and experience. We create experiences that engage audiences through increased knowledge, empathy, and action.
 
-^ We do not consider ourselves a Drupal shop. We do want to use the right tool for the right job. That said, we do use Drupal, and the "other" CMS for most of our BE needs. We are slated this year to really epxplore other CMSs, but my gut is telling our websites will stay inthe Drupal sphere for quite awhile.
+^ We do not consider ourselves a Drupal shop. We do want to use the right tool for the right job. That said, we do use Drupal, and the "other" CMS for most of our BE needs. We are slated this year to really explore other CMSs, but my gut is telling our websites will stay in the Drupal sphere for quite awhile.
 
----
+___
 
 # Who is this for?
 
@@ -46,25 +46,25 @@ Contact for more info
 
 ^ => Let's dive in... First why?
 
----
+___
 
 # Let's get started
 
 ^ Why are we dealing with this? What's the issue?
 
----
+___
 
 # Drupal's Admin Experience
 
 Is...
 
----
+___
 
 # Drupal's Admin Experience
 
 Is... __NOT__ good
 
----
+___
 
 # Drupal's Admin Experience
 
@@ -74,61 +74,63 @@ Is... __NOT__ good
 
 ^ But we have to ask ourselves why?
 
----
+___
 
 # Drupal's Admin Experience
 ## Is __NOT__ good
 
 - Is it because Drupal is inherently bad?
-- The underlying archetecture is bad? (Think Forms??)
+- The underlying architecture is bad? (Think Forms??)
 
----
+___
 [.build-lists: false]
 # Drupal's Admin Experience
 ## Is __NOT__ good
 
 - ~~Is it because Drupal is inherently bad?~~
-- ~~The underlying archetecture is bad? (Think Forms??)~~
+- ~~The underlying architecture is bad? (Think Forms??)~~
 
 
-# I would argure __NO__!!
+# I would argue __NO__!!
 
----
-
-# Drupal's Admin Experience
-## Is __NOT__ good
-
-A good admin experience has to be _designed_, _opinionated_ and _purposeful_. This is hard to do in a system that tries to be eveything for everyone. __Especially when you get into complex data structures!__
-
----
+___
 
 # Drupal's Admin Experience
 ## Is __NOT__ good
 
-A good admin experience has to be _designed_, _opinionated_ and _purposeful_. This is hard to do in a system that tries to be eveything for everyone. __Especially when you get into complex data structures!__
+A good admin experience has to be _designed_, _opinionated_ and _purposeful_. This is hard to do in a system that tries to be everything for everyone. __Especially when you get into complex data structures!__
+
+___
+
+# Drupal's Admin Experience
+## Is __NOT__ good
+
+A good admin experience has to be _designed_, _opinionated_ and _purposeful_. This is hard to do in a system that tries to be everything for everyone. __Especially when you get into complex data structures!__
 
 Can it be done? YES!
 
----
+___
 
 # Drupal's Admin Experience
 ## Is __NOT__ good
 
-A good admin experience has to be _designed_, _opinionated_ and _purposeful_. This is hard to do in a system that tries to be eveything for everyone. __Especially when you get into complex data structures!__
+A good admin experience has to be _designed_, _opinionated_ and _purposeful_. This is hard to do in a system that tries to be everything for everyone. __Especially when you get into complex data structures!__
 
 Can it be done? YES!
 
-Should it be done? YES! [Admin UI & JavaScript Modernisation](https://www.drupal.org/about/strategic-initiatives/admin-ui-js)
+Should it be done? YES! [Admin UI & JavaScript Modernization](https://www.drupal.org/about/strategic-initiatives/admin-ui-js)
 
 ^ Overall Drupal is making great strides... However, our projects are now. And as developers we need to push the boundaries.
 
+^ _Devs do Dev!!_
+
 ^ What steps can we take now?? Lets take a deeper look at what we have available in Drupal...
 
-^ => Lets first tke a look at a bit of Drupal's archetecture.
+^ => Lets first tke a look at a bit of Drupal's architecture.
 
----
+___
 
-# Drupal's Underlying Archetecture
+# Drupal's Underlying Architecture
 
 - Entities
 - Fields
@@ -142,7 +144,7 @@ Should it be done? YES! [Admin UI & JavaScript Modernisation](https://www.drupal
 
 ^ => Let's take a look.
 
----
+___
 
 # Field Widgets
 
@@ -152,7 +154,7 @@ Should it be done? YES! [Admin UI & JavaScript Modernisation](https://www.drupal
 
 ^ Hopefully you are all familiar with the image here: The Form Display Page. Different ways to enter data... _Select List_ VS _checkboxes/radios_?
 
----
+___
 
 # Field Widgets
 
@@ -162,7 +164,7 @@ This opens up a world of possibilities to us.
 
 ^ And as developers we can develop the crap out of it!
 
----
+___
 
 # Field Widgets
 ## What are we going to look at today
@@ -176,7 +178,7 @@ This opens up a world of possibilities to us.
 
 ^ Our first attempt, was just to prove if we can get react in one of these form elements. So we chose a slider to pick a number for a number field.
 
----
+___
 
 # Single Field Widget
 ## Example __=>__
@@ -187,23 +189,28 @@ This opens up a world of possibilities to us.
 
 ^ https://thf.local/node/1120/edit
 
----
+___
 
 # Single Field Widget
 
 Let's switch to the code!
 
+
+
 ^ Show the widget code: copy from the number Field Widget.
+
 ^ formElement -> '#theme' => 'input__number__react'
+
 ^ attaching the library
 
-^ Show the .module file:
+^ Show the .module file: defined the new theme, preprocess input
 
 ^ Show the template file:
 
 ^ Show the libraries file:
 
 ^ Show basic react files: index.js...
+
 ^ Started with `create react app`
 
 ^ This specific example could be done in plain JS...
@@ -212,15 +219,17 @@ Let's switch to the code!
 
 ___
 
-# Complex Data Widget
+# Single Field Widget
+## Recap
 
-![](media/complex-data.png)
-
-^ But what if we have more complex data? How many of you have built paragraphs nested inside of paragraphs, nested inside of paragrpahs... etc. etc.?
-
-^ This is the next challenge we wanted to face:
-
-^ https://thf.local/node/add/hero_network
+1. Field Widget plugin
+  - Added custom theme to element
+  - Added library
+1. .module file
+  - Define the new form element input theme
+  - Pre-process input element
+1. React component
+  - include `<input />`
 
 ___
 
@@ -228,7 +237,16 @@ ___
 
 ![](media/complex-data.png)
 
-[images of hero network...]
+^ But what if we have more complex data? How many of you have built paragraphs nested inside of paragraphs, nested inside of paragraphs... etc. etc.?
+
+^ This is the next challenge we wanted to face:
+
+^ https://thf.local/node/add/hero_network
+
+___
+[.slidenumbers: false]
+[.footer: ]
+![fill original](media/hero_network_001.jpg)
 
 ^ We had data chained together. Artifact and concepts. A - C - A - C - A
 
@@ -252,7 +270,7 @@ to the website!!
 
 ^ => After a lot of thinking, two things popped out for us...
 
----
+___
 
 # Complex Data Widget
 
@@ -267,7 +285,7 @@ to the website!!
 
 ^ => Lets move on to some more notes about what we did...
 
----
+___
 
 # Complex Data Widget
 ## Notes
@@ -275,10 +293,25 @@ to the website!!
 - `hook_preprocess_node()` to render data (optional)
 - For this specific example we used an API endpoint for data.
 
----
+___
+
+# Complex Data Widget
+## Recap
+
+1. Field Widget plugin
+  - Added custom theme to element
+  - Added library
+1. .module file
+  - Define the new form element input theme
+  - Pre-process input element
+1. React component
+  - include `<input />`
+
+___
 
 # Where to go from here?
 
+- Devs should dev
 - Better Entity Browser (Media)
 - Better Paragraphs interface
 - "Hot spot" picker
@@ -288,21 +321,21 @@ to the website!!
 
 ^ We can also easily edit one piece of a node in code without having to load the entire Node Edit form.
 
----
+___
 
 #Thanks!
 
 ###Questions?<br><br>Comments?<br><br>Discussion?
 
----
+___
 
 #Bluecadet
 
 ![right](media/bc_workspace.jpg)
 ![left](media/bluecadet-nasm-website.jpg)
 
----
+___
 
 https://github.com/pingevt/drupal-react-widgets
 
----
+___
