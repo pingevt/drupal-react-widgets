@@ -1,0 +1,29 @@
+.title {
+  &--xl {
+    @include title--xl;
+  }
+
+  &--large {
+    @include title--large;
+  }
+
+  &--medium {
+    @include title--medium;
+  }
+
+  &--small {
+    @include title--small;
+  }
+}
+
+.widget-label {
+  @include label;
+
+  &--bold {
+    @include label--bold;
+  }
+
+  &--upper {
+    @include label--upper;
+  }
+}

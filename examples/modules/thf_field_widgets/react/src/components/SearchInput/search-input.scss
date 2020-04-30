@@ -1,0 +1,21 @@
+@import '01-Settings/base';
+
+.search-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-input__input {
+  width: 100%;
+  height: 50px;
+  font-family: $f-sans;
+  font-size: 16px;
+  padding: 0 $space-s;
+  border: 1px solid $c-gray-med;
+  transition: border-color 200ms $easeInOutCubic;
+
+  &:focus {
+    border-color: $c-blue;
+    outline: none;
+  }
+}

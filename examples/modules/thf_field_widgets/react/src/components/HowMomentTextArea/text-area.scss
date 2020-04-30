@@ -1,0 +1,71 @@
+@import '01-Settings/base';
+
+.text-area {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.text-area__label {
+  align-self: flex-end;
+}
+
+.text-area__formatting {
+  display: flex;
+  margin-left: auto;
+  margin-bottom: $space-xxxs;
+}
+
+.text-area__format {
+  width: 32px;
+  height: 28px;
+  background-color: $c-gray-light;
+  border-radius: 4px;
+  margin-left: $space-xxxs;
+  cursor: pointer;
+  transition: all 300ms $easeInOutCubic;
+
+  &:hover,
+  &:focus {
+    color: $c-blue;
+  }
+
+  &:active {
+    background-color: $c-gray-med;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  i sub {
+    font-size: 0.8em;
+    bottom: 0em;
+
+  }
+}
+
+.text-area__input {
+  width: 100%;
+  height: 200px;
+  font-family: $f-sans;
+  font-size: 16px;
+  padding: $space-xs $space-s;
+  border: 1px solid $c-gray-med;
+  overflow-y: auto;
+  transition: border-color 200ms $easeInOutCubic;
+  display: inline-block;
+
+  &:focus {
+    border-color: $c-blue;
+    outline: none;
+  }
+
+  div {
+    margin-top: 1.5em;
+  }
+}
+
+.node-hero-network-edit-form .text-area__input div {
+  background: red;
+  padding: 3px;
+}

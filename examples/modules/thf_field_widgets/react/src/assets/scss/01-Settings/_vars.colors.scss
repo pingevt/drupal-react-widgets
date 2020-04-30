@@ -1,0 +1,31 @@
+$c-white: #ffffff;
+$c-black: #2d2d2d;
+
+$c-blue: #0074bd;
+$c-red: #d24513;
+
+$c-gray-dark: #a6a6a6;
+$c-gray-med: #e6e4de;
+$c-gray-light: #f5f5f2;
+
+// ----
+// Color list for utility classes
+//
+// See '04-Utilities/utils.colors.scss'
+//
+// Array format:
+//  'class-base': $color-var,
+//  'class-base' will output as 'u-c-class-base, u-bg-class-base, etc.'
+// ----
+
+// TODO: Turn this whole thing into one function/map;
+
+$colors: (
+  'white': $c-white,
+  'black': $c-black,
+  'blue': $c-blue,
+  'red': $c-red,
+  'gray-dark': $c-gray-dark,
+  'gray-med': $c-gray-med,
+  'gray-light': $c-gray-light,
+);

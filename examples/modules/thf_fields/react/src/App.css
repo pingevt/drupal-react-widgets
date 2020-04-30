@@ -1,0 +1,8 @@
+
+.slider-wrapper {
+  max-width: 300px;
+}
+
+.slider-wrapper .slider-element {
+  margin-top: 0.5em;
+}

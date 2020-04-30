@@ -1,0 +1,8 @@
+name: THF Table (AV04) Field Widgets
+type: module
+description: React Field Widgets for "How Moment" and "Hero Network"
+core: 8.x
+package: The Henry Ford
+version: '8.x-1.0'
+
+# configure: thf_utility.admin_config_thf

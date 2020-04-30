@@ -1,0 +1,32 @@
+$spacing: 8px;
+
+$space-0: 0;
+$space-xxxs: $spacing * 0.5; // 4px
+$space-xxs: $spacing * 1; // 8px
+$space-xs: $spacing * 1.5; // 12px
+$space-s: $spacing * 2; // 16px
+$space-m: $spacing * 3; // 24px
+$space-l: $spacing * 4; // 32px
+$space-xl: $spacing * 6; // 48px
+$space-xxl: $spacing * 9; // 72px
+$space-xxxl: $spacing * 18; // 144px
+
+// ----
+// Spacing list for utility classes
+//
+// see `08-Utilities/utils.spacing.scss
+// Array format: 'class-base': $spacing-var
+// ----
+
+$spaces: (
+  0: $space-0,
+  xxxs: $space-xxxs,
+  xxs: $space-xxs,
+  xs: $space-xs,
+  s: $space-s,
+  m: $space-m,
+  l: $space-l,
+  xl: $space-xl,
+  xxl: $space-xxl,
+  xxxl: $space-xxxl,
+);

@@ -1,0 +1,22 @@
+{
+  "name": "thf_fields",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "rc-slider": "^8.6.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.5",
+    "renamer": "^1.0.0",
+    "replace": "^1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build&&npm run build-rename",
+    "build-rename": "npm run build-rename-js&&npm run build-rename-css",
+    "build-rename-js": "renamer --find \"/main\\.[^.]+\\./i\" --replace \"main.\" build/static/js/*",
+    "build-rename-css": "renamer --find \"/main\\.[^.]+\\./i\" --replace \"main.\" build/static/css/*",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

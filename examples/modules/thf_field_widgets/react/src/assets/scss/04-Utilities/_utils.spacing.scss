@@ -1,0 +1,50 @@
+// ----
+// Margin and Padding classes
+//
+// See $spaces in 01-Settings/_vars.spacing.scss
+//
+// To utilize responsive utility classes, prepend with a breakpoint size
+// ex: class="u-mar-bottom-s md:u-mar-bottom-l lg:u-mar-bottom-m"
+// ----
+
+$directions: ('top', 'right', 'bottom', 'left');
+
+@each $name, $value, $direction, $sides in $spaces {
+  .u-mar-#{$name} {
+    margin: $value !important;
+  }
+
+  .u-pad-#{$name} {
+    padding: $value !important;
+  }
+
+  @each $direction in $directions {
+    .u-mar-#{$direction}-#{$name} {
+      margin-#{$direction}: $value !important;
+    }
+
+    .u-pad-#{$direction}-#{$name} {
+      padding-#{$direction}: $value !important;
+    }
+  }
+
+  .u-mar-horz-#{$name} {
+    margin-left: $value !important;
+    margin-right: $value !important;
+  }
+
+  .u-pad-horz-#{$name} {
+    padding-left: $value !important;
+    padding-right: $value !important;
+  }
+
+  .u-mar-vert-#{$name} {
+    margin-top: $value !important;
+    margin-bottom: $value !important;
+  }
+
+  .u-pad-vert-#{$name} {
+    padding-top: $value !important;
+    padding-bottom: $value !important;
+  }
+}

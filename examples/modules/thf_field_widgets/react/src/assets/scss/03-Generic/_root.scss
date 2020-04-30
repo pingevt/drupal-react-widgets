@@ -1,0 +1,55 @@
+.app {
+  color: $c-black;
+  background-color: $c-white;
+  line-height: $f-base-line-height;
+  font-family: $f-sans;
+  font-size: $f-base-size;
+  font-weight: $f-regular;
+  box-sizing: border-box !important;
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit !important;
+  }
+
+  i,
+  em {
+    font-style: italic;
+  }
+
+  b,
+  strong {
+    font-weight: $f-bold;
+  }
+
+  a {
+    color: $c-blue;
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  abbr[title],
+  acronym[title] {
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: initial;
+    padding: initial;
+  }
+
+  mark {
+    background-color: lighten($c-red, 40%);
+  }
+}

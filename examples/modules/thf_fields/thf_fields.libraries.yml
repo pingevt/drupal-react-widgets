@@ -1,0 +1,10 @@
+react-slider:
+  version: 1.x
+  css:
+    theme:
+      react/build/static/css/main.css: {}
+  js:
+    react/build/static/js/main.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

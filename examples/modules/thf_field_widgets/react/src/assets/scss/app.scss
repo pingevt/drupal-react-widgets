@@ -1,0 +1,26 @@
+// ----
+// ITCSS Overview
+//
+// The CSS for this project is organized according to the ITCSS methodology.
+// The principles of ITCSS organize file structure to guide specificity in a
+// downward flow, from wide-reaching to very specific.
+//
+// ITCSS ORGANIZATION:
+//   01_Settings......Variables that are public to the project
+//   02_Mixins........Mixins and functions that are public to the project
+//   03_Generic.......High-level, far reaching styles. Ex: reset.scss, *, html, etc.
+//   04_Utilities.....Classes with very specific purposes. They are useful for reuse but
+//                      specific and succinct in their implementation. Ex: cover, caps, etc.
+//
+// Component SCSS files live alongside the JSX file
+//
+// CLASS NAMING CONVENTIONS:
+// Classes are implemented in a BEM (Block/Element/Modifier) structure, and prepended with
+// their ITCSS type. This means that `components` are prepended with `c-`
+//
+// @link https://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528
+
+@import '01-Settings/base';
+@import '02-Mixins/base';
+@import '03-Generic/base';
+@import '04-Utilities/base';

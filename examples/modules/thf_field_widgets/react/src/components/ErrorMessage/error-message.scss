@@ -1,0 +1,32 @@
+@import '01-Settings/base';
+
+.error-message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $c-red;
+  color: $c-white;
+  padding: $space-xxs $space-xs;
+  font-size: 15px;
+  font-weight: $f-bold;
+  border-radius: $space-xxxs;
+}
+
+.error-message__msg {
+  &:before {
+    content: '⚠';
+    margin-right: $space-xxxs;
+  }
+}
+
+.error-message__link {
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: -0.1px;
+  color: $c-white !important;
+
+  &:after {
+    content: '→';
+    margin-left: $space-xxxs;
+  }
+}

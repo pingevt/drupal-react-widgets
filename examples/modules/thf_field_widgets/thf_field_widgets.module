@@ -1,0 +1,165 @@
+<?php
+
+/**
+ * @file
+ * Presave functions.
+ */
+
+use Drupal\node\NodeInterface;
+use Drupal\Core\Render\Markup;
+
+/**
+ * Implements hook_theme().
+ */
+function thf_field_widgets_theme($existing, $type, $theme, $path) {
+  return [
+    'input__hero_network' => [
+      'base hook' => 'input',
+    ],
+    'input__how_moment' => [
+      'base hook' => 'input',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_input().
+ */
+function thf_field_widgets_preprocess_input(&$variables) {
+  if ($variables['theme_hook_original'] == 'input__hero_network' || $variables['theme_hook_original'] == 'input__how_moment') {
+
+    $variables['attributes']['id'] = $variables['element']['#id'];
+    $variables['attributes']['name'] = $variables['element']['#name'];
+    $variables['attributes']['value'] = $variables['element']['#value'];
+    $variables['attributes']['data-nid'] = $variables['element']['#existing_nid'];
+
+    if ($variables['theme_hook_original'] == 'input__hero_network') {
+      $variables['attributes']['data-max-connections'] = $variables['element']['#max_connections'];
+    }
+  }
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function thf_field_widgets_node_presave(NodeInterface $node) {
+  if ($node->bundle() == "how_moment") {
+
+    $json_data = json_decode($node->field_widget_data->value);
+
+    $node->set('field_table_concept', $json_data->concept);
+    $node->set('field_table_artifact', $json_data->artifact);
+    $node->set('field_table_how_text', $json_data->text);
+  }
+
+  if ($node->bundle() == "hero_network") {
+
+    $json_data = json_decode($node->field_widget_data->value);
+
+    $node->set('field_table_concept', $json_data->concept);
+    $node->set('field_table_artifact', $json_data->artifact);
+    $node->set('field_hn_statement', $json_data->text);
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function thf_field_widgets_preprocess_node(&$variables) {
+  $node = $variables['elements']['#node'];
+  $table_service = \Drupal::service('thf_api.table');
+
+  switch ($node->bundle()) {
+    case 'how_moment':
+
+
+
+      $artifact_id = $node->field_table_artifact->value;
+      $artifact = $table_service->getArtifact($artifact_id);
+
+      $concept_id = $node->field_table_concept->value;
+      $concept = $table_service->getConcept($concept_id);
+
+      ksm($artifact_id, $concept_id);
+      ksm($artifact, $concept);
+
+      if ($artifact) {
+        $variables['content']['artifact'] = [
+          '#weight' => ($variables['content']['field_table_artifact']['#weight']),
+          'title' => [
+            '#markup' => '<h3>Artifact</h3>',
+          ],
+          'desc' => [
+            '#markup' => Markup::create($artifact['ArtifactSummary']),
+          ],
+        ];
+
+        // Remove original field display.
+        unset($variables['content']['field_table_artifact']);
+      }
+
+      if ($concept) {
+        $variables['content']['concept'] = [
+          // '#theme' => 'container',
+          '#weight' => ($variables['content']['field_table_concept']['#weight']),
+          'title' => [
+            '#markup' => '<h3>Concept</h3>',
+          ],
+          'desc' => [
+            '#markup' => Markup::create($concept['Title']),
+          ],
+        ];
+
+        // Remove original field display.
+        unset($variables['content']['field_table_concept']);
+      }
+
+      break;
+
+    case 'hero_network':
+
+      $connections = [];
+
+      $artifact_ids = $node->field_table_artifact->getValue();
+      $concept_ids = $node->field_table_concept->getValue();
+
+      foreach ($artifact_ids as $i => $a_data) {
+        $connections[($i * 2)] = $table_service->getArtifact($a_data['value']);
+      }
+      foreach ($concept_ids as $i => $c_data) {
+        $connections[($i * 2 + 1)] = $table_service->getConcept($c_data['value']);
+      }
+
+      // Sort array.
+      ksort($connections);
+
+      $variables['content']['network'] = [
+        '#theme' => 'item_list',
+        '#title' => "Network",
+        '#items' => [],
+        '#wrapper_attributes' => [
+          'class' => ['hero-network-list-wrap'],
+        ],
+        '#attributes' => [
+          'class' => ['hero-network-list'],
+        ],
+        '#weight' => $variables['content']['field_table_artifact']['#weight'],
+      ];
+
+      foreach ($connections as $conn_detail) {
+        $variables['content']['network']['#items'][] = [
+          '#wrapper_attributes' => [
+            'class' => [isset($conn_detail['ArtifactSummary']) ? "artifact" : "concept"],
+          ],
+          '#markup' => "<p class='label'>" . (isset($conn_detail['ArtifactSummary']) ? "Artifact" : "Concept") . ": [" . (isset($conn_detail['ArtifactKey']) ? $conn_detail['ArtifactKey'] : $conn_detail['Key']) . "]</p>" . "<p class='title'>" . (isset($conn_detail['ArtifactSummary']) ? $conn_detail['ArtifactSummary'] : $conn_detail['Title']) . "</p>",
+        ];
+      }
+
+      // Remove original field display.
+      unset($variables['content']['field_table_artifact']);
+      unset($variables['content']['field_table_concept']);
+
+      break;
+  }
+}
