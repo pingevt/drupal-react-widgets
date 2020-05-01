@@ -9,6 +9,10 @@ theme: Work, 7
 ^ * Be the Story Teller
 * Breathe
 
+^ Philly Slack
+
+^ PDF in slack, repo etc.
+
 ___
 
 # Who am I?
