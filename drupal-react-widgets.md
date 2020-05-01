@@ -189,13 +189,25 @@ ___
 
 ^ https://thf.local/node/1120/edit
 
+^ => Before we dive into the code, let me just explain what we'll see.
+___
+
+# Single Field Widget
+
+1. Field Widget plugin
+  - Added custom theme to element
+  - Added library
+1. .module file
+  - Define the new form element input theme
+  - Pre-process input element
+1. React component
+  - include `<input />`
+
 ___
 
 # Single Field Widget
 
 Let's switch to the code!
-
-
 
 ^ Show the widget code: copy from the number Field Widget.
 
@@ -215,8 +227,6 @@ Let's switch to the code!
 
 ^ This specific example could be done in plain JS...
 
-^ this worked for us, but we had higher ambitions...
-
 ___
 
 # Single Field Widget
@@ -230,6 +240,8 @@ ___
   - Pre-process input element
 1. React component
   - include `<input />`
+
+^ => this worked for us, but we had higher ambitions...
 
 ___
 
@@ -308,16 +320,98 @@ ___
   - include `<input />`
 
 ___
-
+[.build-lists: false]
 # Where to go from here?
+
+![right](media/matrix.jpeg)
+
+- Devs should dev
+
+___
+[.build-lists: false]
+# Where to go from here?
+
+![right](media/matrix.jpeg)
+
+- Devs should dev
+- Better Entity Browser (Media)
+
+___
+[.build-lists: false]
+# Where to go from here?
+
+![right](media/matrix.jpeg)
 
 - Devs should dev
 - Better Entity Browser (Media)
 - Better Paragraphs interface
-- "Hot spot" picker
+
+___
+[.build-lists: false]
+# Where to go from here?
+
+![right](media/matrix.jpeg)
+
+- Devs should dev
+- Better Entity Browser (Media)
+- Better Paragraphs interface
 - Recurring Dates
+
+___
+[.build-lists: false]
+# Where to go from here?
+
+![right loop autoplay mute 50%](media/river_alive_wm.mp4)
+
+- Devs should dev
+- Better Entity Browser (Media)
+- Better Paragraphs interface
+- Recurring Dates
+- "Hot spot" picker
+
+___
+[.build-lists: false]
+# Where to go from here?
+
+![right 20%](media/dials.png)
+
+- Devs should dev
+- Better Entity Browser (Media)
+- Better Paragraphs interface
+- Recurring Dates
+- "Hot spot" picker
+- Anything customized to your project or client
+
+___
+[.build-lists: false]
+# Where to go from here?
+
+![right 20%](media/dials.png)
+
+- Devs should dev
+- Better Entity Browser (Media)
+- Better Paragraphs interface
+- Recurring Dates
+- "Hot spot" picker
 - Anything customized to your project or client
 - Sky is the limit!
+
+^ We can also easily edit one piece of a node in code without having to load the entire Node Edit form.
+
+___
+[.build-lists: false]
+# Where to go from here?
+
+![right 20%](media/dials.png)
+
+- Devs should dev
+- Better Entity Browser (Media)
+- Better Paragraphs interface
+- Recurring Dates
+- "Hot spot" picker
+- Anything customized to your project or client
+- Sky is the limit!
+  - Not locked into React
 
 ^ We can also easily edit one piece of a node in code without having to load the entire Node Edit form.
 
