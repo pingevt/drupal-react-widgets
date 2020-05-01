@@ -43,6 +43,7 @@ ___
 # Who is this for?
 
 - Moderate to Advanced Coders
+- Anyone interested in customizing Drupal
 
 ^ => Let's dive in... First why?
 
