@@ -259,7 +259,7 @@ ___
 ___
 [.slidenumbers: false]
 [.footer: ]
-![fill original](media/hero_network_001.jpg)
+![fill 115% original](media/thf-table.gif)
 
 ^ We had data chained together. Artifact and concepts. A - C - A - C - A
 
